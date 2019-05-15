@@ -11,7 +11,6 @@ app.get('*',(req,res)=>{
     res.sendFile(path.join(__dirname, "../dist/track-your-lifts-project/index.html"));
 });
 
-
 const port = process.env.PORT || 3000;
 app.listen(port,()=>{
     console.log(`working on port ${port}`);
