@@ -1,9 +1,6 @@
-.navigation-bar{
-    height: 10%;
-}
-
 .main-content{
-    border: 2px solid black;
+    /* border: 2px solid black; */
+    height: 90vh;
 }
 
 .app-exercise-log{
@@ -11,5 +8,9 @@
 }
 
 .right-side{
-    border: 2px solid red;
+    /* border: 2px solid red; */
+}
+
+.signup{
+    margin-top: 5em;
 }

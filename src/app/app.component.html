@@ -1,11 +1,17 @@
-<div class="navigation-bar">
-    <app-navigation-bar></app-navigation-bar>
-</div>
-<div class="main-content fixed-bottom d-flex">
+<app-navigation-bar></app-navigation-bar>
+<div *ngIf="!signupCondition && !signinCondition" class="main-content fixed-bottom d-flex">
   <div class="w-25 p-2 app-exercise-log overflow-auto">
     <app-exercise-log></app-exercise-log>
   </div>
   <div class="w-75 p-2 right-side">
-    right side
+    <router-outlet></router-outlet>
   </div>  
+</div>
+
+<div *ngIf="signupCondition" class="container signup">
+  <router-outlet></router-outlet>
+</div>
+
+<div *ngIf="signinCondition" class="container signup">
+  <router-outlet></router-outlet>
 </div>

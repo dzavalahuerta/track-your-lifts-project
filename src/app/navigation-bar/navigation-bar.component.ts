@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CrossComponentCommunicationService } from '../services/cross-component-communication.service';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cccService: CrossComponentCommunicationService) { }
 
   ngOnInit() {
   }
 
+  onSignup(){
+    this.cccService.signupRouteConditionMethod();
+  }
+  onSignin(){
+    this.cccService.signinRouteConditionMethod();
+  }
 }
