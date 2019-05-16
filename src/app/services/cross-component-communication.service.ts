@@ -3,14 +3,19 @@ import { Subject } from 'rxjs';
 
 @Injectable()
 export class CrossComponentCommunicationService {
-  signupRouteCondition = new Subject();
   signinRouteCondition = new Subject();
+  signupRouteCondition = new Subject();
+  homeRouteCondition = new Subject();
   constructor() { }
 
-  signupRouteConditionMethod(){
-    this.signupRouteCondition.next(true);
+
+  homeRouteConditionMethod(){
+    this.homeRouteCondition.next(true);
   }
   signinRouteConditionMethod(){
     this.signinRouteCondition.next(true);
+  }
+  signupRouteConditionMethod(){
+    this.signupRouteCondition.next(true);
   }
 }

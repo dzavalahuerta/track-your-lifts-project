@@ -11,11 +11,15 @@ import { SigninComponent } from './authorization/signin/signin.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CrossComponentCommunicationService } from './services/cross-component-communication.service';
 import { AuthorizationService } from './services/authorization.service';
+import { ServerService } from './services/server.service';
+import { ExerciseLogDataService } from './services/exercise-log-data.service';
+import { NewUserPageComponent } from './new-user-page/new-user-page.component';
 
 const appRoutes = [
   { path: '', component: HomePageComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'signin', component: SigninComponent }
+  { path: 'signin', component: SigninComponent },
+  { path: 'newuser', component: NewUserPageComponent }
 ]
 
 @NgModule({
@@ -25,14 +29,15 @@ const appRoutes = [
     NavigationBarComponent,
     SignupComponent,
     SigninComponent,
-    HomePageComponent
+    HomePageComponent,
+    NewUserPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [CrossComponentCommunicationService, AuthorizationService],
+  providers: [CrossComponentCommunicationService, AuthorizationService, ServerService, ExerciseLogDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

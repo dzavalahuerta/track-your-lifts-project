@@ -8,6 +8,7 @@ import * as firebase from 'firebase';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+  homeCondition = true;
   signupCondition = false;
   signinCondition = false;
 
@@ -19,11 +20,12 @@ export class AppComponent implements OnInit{
       authDomain: 'track-your-lifts-project.firebaseapp.com'
     });
 
-    this.cccService.signupRouteCondition
+    this.cccService.homeRouteCondition
       .subscribe(
         (condition: boolean)=>{
           this.signinCondition = false;
-          this.signupCondition = condition;
+          this.signupCondition = false;
+          this.homeCondition = condition;
         }
       );
 
@@ -31,7 +33,17 @@ export class AppComponent implements OnInit{
       .subscribe(
         (condition: boolean)=>{
           this.signupCondition = false;
+          this.homeCondition = false;
           this.signinCondition = condition;
+        }
+      );
+
+    this.cccService.signupRouteCondition
+      .subscribe(
+        (condition: boolean)=>{
+          this.signinCondition = false;
+          this.homeCondition = false;
+          this.signupCondition = condition;
         }
       );
   }

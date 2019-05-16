@@ -12,11 +12,14 @@ export class NavigationBarComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  onSignup(){
-    this.cccService.signupRouteConditionMethod();
+  
+  onHome(){
+    this.cccService.homeRouteConditionMethod();
   }
   onSignin(){
     this.cccService.signinRouteConditionMethod();
+  }
+  onSignup(){
+    this.cccService.signupRouteConditionMethod();
   }
 }
